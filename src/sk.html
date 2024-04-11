@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Management System</title>
+</head>
+<body>
+<h1>Attendance Management System</h1>
+
+<form method="post" action="AttendanceServlet">
+    <label for="studentName">Student's Name:</label>
+    <input type="text" id="studentName" name="studentName">
+    <input type="submit" value="Mark Attendance">
+</form>
+
+<hr>
+
+<h2>Attendance Records</h2>
+<table border="1">
+    <tr>
+        <th>Student Name</th>
+        <th>Status</th>
+    </tr>
+    <%-- Loop through attendance records and display them --%>
+    <%-- Example: Assuming attendanceRecords is a Map<String, Boolean> --%>
+    <% for (Map.Entry<String, Boolean> entry : attendanceRecords.entrySet()) { %>
+    <tr>
+        <td><%= entry.getKey() %></td>
+        <td><%= entry.getValue() ? "Present" : "Absent" %></td>
+    </tr>
+    <% } %>
+</table>
+</body>
+</html>
