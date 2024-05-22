@@ -3,7 +3,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class AttendanceManagementSystem {
-    private Map<String, Boolean> attendanceRecords;
+    private final Map<String, Boolean> attendanceRecords;
 
     public AttendanceManagementSystem() {
         attendanceRecords = new HashMap<>();
